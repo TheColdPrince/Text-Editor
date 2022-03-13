@@ -1,0 +1,172 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+body,
+input,
+textarea {
+  font-family: sans-serif;
+  color: #555;
+  letter-spacing: 0.04em;
+}
+
+.legal-pad {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 1rem;
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  overflow: hidden;
+}
+
+.pad-binding {
+  align-items: center;
+  color: #a44040;
+  display: flex;
+  font-weight: 600;
+  height: 60px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #b34646;
+  border-bottom: 4px solid #8e3838;
+  z-index: 3;
+  box-sizing: border-box;
+  padding: auto 90px;
+}
+.pad-binding .button-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem;
+}
+.pad-binding .button-group .button {
+  background: #8e3838;
+  border: 0;
+  border-radius: 4px;
+  color: #e1b1b1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.pad-binding .button-group .button:hover, .pad-binding .button-group .button:focus {
+  background: #c46868;
+}
+.pad-binding .button-group .button:active {
+  background: #8e3838;
+}
+
+.pad-content {
+  background: #ffffcc;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.pad-content.dummy {
+  z-index: 0;
+}
+.pad-content.removing-page {
+  animation: remove-page 1000ms;
+}
+
+.pad-margin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-right: 2px solid #ffcccc;
+  width: 90px;
+  z-index: 0;
+}
+.pad-margin:before {
+  position: absolute;
+  right: 6px;
+  content: "";
+  width: 2px;
+  display: block;
+  height: 100%;
+  background: #ffcccc;
+}
+
+.pad-header {
+  z-index: 2;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: box-shadow 0.2s ease;
+}
+.pad-header.is-overlapping {
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+}
+.pad-header .pad-title {
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  padding-left: 110px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+.pad-header .pad-title:focus {
+  outline: none;
+}
+
+.pad-body {
+  position: absolute;
+  top: 90px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: repeating-linear-gradient(#cce0ff, #cce0ff 2px, transparent 2px, transparent 2rem);
+  background-attachment: local;
+  background-size: 32px 32px;
+}
+.pad-body .pad-input {
+  background: transparent;
+  line-height: 2rem;
+  font-size: 1rem;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  padding-left: 110px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+.pad-body .pad-input:focus {
+  outline: none;
+}
+
+@keyframes remove-page {
+  100% {
+    transform: rotate(-20deg) translateY(120%);
+  }
+}
