@@ -1,8 +1,8 @@
 var marright = 100;
 var marleft = 100
 var len = document.getElementById("content").clientHeight;
-document.getElementById("heading").innerHTML = localStorage["title"] || "Título";
-document.getElementById("content").innerHTML = localStorage["text"] || "Texto";
+document.getElementById("heading").innerHTML = localStorage["title"] || "Title";
+document.getElementById("content").innerHTML = localStorage["text"] || "Text";
 document.getElementById("content").onkeypress = function(){mover()}
 document.getElementById("content").onkeyup = function(){mover2()}
 setInterval (function() {
