@@ -1,0 +1,23 @@
+html{
+  font-family: 'Courier New', Courier, monospace;
+}
+body{
+  max-width: 50em;
+  margin-top: 50px;
+  margin-left: 400px;
+  background: transparent;
+}
+div:focus{
+  outline: none;
+}
+
+#heading{
+  padding-top: 50px;
+  font-size: 45px;
+}
+#content{
+  font-size: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  color: #383b3e;
+}
